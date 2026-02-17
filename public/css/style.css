@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ******************* FONTS */
+
+@font-face {
+  font-family: "Velvelyne";
+  font-weight: bold;
+  src: url('../fonts/Velvelyne-Bold.otf') format('opentype');
+
+  font-family: "Velvelyne";
+  font-weight: book;
+  src: url('../fonts/Velvelyne-Book.otf') format('opentype');
+
+  font-family: "Velvelyne";
+  font-weight: light;
+  src: url('../fonts/Velvelyne-Light.otf') format('opentype');
+
+  font-family: "Velvelyne";
+  font-weight: regular;
+  src: url('../fonts/Velvelyne-Regular.otf') format('opentype');
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: "Velvelyne", sans-serif;
+  font-weight: regular;
+}
+
+.tube__wrapper {
+  perspective: 1000px;
+  position: absolute;
+  height: 100vh;
+}
+
+.tube__ellipse {
+  width: 100vw;
+  max-height: fit-content;
+  transform-style: preserve-3d;
+}
+
+.tube__text__wrapper {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  transform-style: preserve-3d;
+}
+
+.tube__text__item {
+  position: absolute;
+  transform-origin: center;
+  white-space: nowrap;
+  font-size: 1rem;
+}
+
+.focused-img-container {
+  position: absolute;
+  left: 50%;
+  top: 5%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 350px;
+  border-radius: 8px;
+  /* border: 2px solid red; */
+  pointer-events: none;
+}
+
+.display-container {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 40vw;
+  max-height: 40vh;
+  object-fit: contain;
+  display: flex;
+}
+
+
+#focused-img {
+  max-height: 50%;
+  object-fit: contain;
+}
+
+.center-title {
+  text-align: center;
+  margin-top: 95%;
+  font-size: 1.8rem;
+  font-weight: bold;
+  pointer-events: none;
+}
+
+.focus-layer {
+  display: inline-block;
+  transform-origin: center;
+}
+
+#about-section {
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 600px) {
+  .focused-img-container {
+    width: 40vw;
+    height: 20vh;
+  }
+  .display-container{
+    margin-top: 20%;
+  }
+    #about-section {
+    font-size: 1.5rem;
+    padding-left: 2%;
+    }
+
+    .center-title {
+      font-size: 1.2rem;
+      margin-top: 100%;
+    }
+
+}
+
